@@ -1,5 +1,7 @@
 import "./style.css";
-
+import faris from './images/farris.webp'
+import toppipe from './images/toppipe.webp'
+import bottompipe from './images/bottompipe.webp'
 // game
 let gameOver = false;
 let score = 0;
@@ -38,6 +40,7 @@ let velocityY = 0; // bird jump speed
 let gravity = 0.4;
 
 window.onload = () => {
+  console.log(faris)
   board = document.getElementById("board");
   board.height = boardHeight;
   board.width = boardWidth;
@@ -45,12 +48,12 @@ window.onload = () => {
   context = board.getContext("2d");
 
   birdImg = new Image();
-  birdImg.src = "./public/farris.webp";
+  birdImg.src = faris;
 
   topPipeImg = new Image();
   bottomPipeImg = new Image();
-  topPipeImg.src = "./public/toppipe.webp";
-  bottomPipeImg.src = "./public/bottompipe.webp";
+  topPipeImg.src = toppipe
+  bottomPipeImg.src = bottompipe
 
   birdImg.onload = () =>
     context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
